@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+<!-- changes the greeting based on the time of day -->
+<% const time = new Date().getHours() %>
+<% let timeGreeting; %>
+<% if(time < 12){ %>
+    <% timeGreeting = "Good Morning, "; %>
+<% } else if(time < 18){ %>
+  <% timeGreeting = "Good Afternoon, "; %>
+<% } else { %> 
+  <% timeGreeting = "Good Evening, "; %>
+<% } %>
+
+<div class="container">
+  <div class="row mt-5">
+      <div>
+          <h3><strong><%= timeGreeting %></strong> <%= user.firstName %>!</h3>
+          <p>This is your home base for Workout tracking</p>
+      </div>
+
+  </div>
+</div>
+
+
+
+<%- include('partials/footer') -%>
